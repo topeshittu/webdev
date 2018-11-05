@@ -16,10 +16,14 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes       = require("./routes/index")
     
-console.log(process.env.DATABASEURL);    
-    
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+//console.log(process.env.DATABASEURL);  
 
+//var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v12Deployed, { useNewUrlParser: true }"
+//mongoose.connect(url);
+
+mongoose.connect("mongodb://donjoex:success123@ds151943.mlab.com:51943/yelpcamp");
+//mongoose.connect("mongodb://localhost/yelp_camp_v12Deployed")  
+    
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(flash());
